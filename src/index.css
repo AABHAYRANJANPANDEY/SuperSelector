@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold-primary: #D4AF37;
+    --gold-light: #F3E5AB;
+    --pink-rr: #EB1460;
+    --maroon-deep: #2B0413;
+    --sandstone: #C89D76;
+  }
+
+  body {
+    background-color: #0A0507;
+    color: #F7EEE4;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-royal {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Jharokha Arch and Jaali Geometric Backgrounds */
+.bg-jaali-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 1.5px, transparent 1.5px),
+                    radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.05) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+.bg-jaali-lattice {
+  background-color: #12050b;
+  background-image: 
+    linear-gradient(45deg, rgba(212, 175, 55, 0.06) 25%, transparent 25%, transparent 75%, rgba(212, 175, 55, 0.06) 75%),
+    linear-gradient(45deg, rgba(212, 175, 55, 0.06) 25%, transparent 25%, transparent 75%, rgba(212, 175, 55, 0.06) 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Gold Metallic Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF1C5 0%, #E5B842 35%, #D4AF37 60%, #997B20 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-pink-gradient {
+  background: linear-gradient(135deg, #FF6EA4 0%, #EB1460 60%, #9E0B3F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Royal Haveli Glassmorphic Cards */
+.haveli-card {
+  background: linear-gradient(145deg, rgba(38, 7, 20, 0.85) 0%, rgba(18, 4, 10, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(243, 229, 171, 0.3);
+}
+
+.haveli-card:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 20px 45px -5px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(243, 229, 171, 0.5);
+}
+
+/* Scalloped Arch & Ornate Filigree Border Helpers */
+.ornate-border-box {
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+.ornate-border-box::before, .ornate-border-box::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #D4AF37;
+  pointer-events: none;
+}
+.ornate-border-box::before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid #D4AF37;
+  border-left: 2px solid #D4AF37;
+}
+.ornate-border-box::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid #D4AF37;
+  border-right: 2px solid #D4AF37;
+}
+
+/* Floating Rose Petals Animation */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-50px) translateX(0px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) translateX(90px) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation: petalFall linear infinite;
+}
+
+/* Custom Scrollbar in Antique Gold */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0408;
+}
+::-webkit-scrollbar-thumb {
+  background: #3c0c1e;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
